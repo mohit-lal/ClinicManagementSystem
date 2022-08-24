@@ -1,0 +1,76 @@
+{% extends 'clienttemplates/clientbase.html' %}
+{% load static %}
+{% block title %} Videos {% endblock %}
+{% block active5 %} active {% endblock %}
+
+{% block css %}
+<style>
+@media only screen and (max-width: 600px){
+  .video1
+  {
+    height:auto;
+    width: 100%;
+  }
+}
+</style>
+
+{% endblock %}
+
+{% block body %}
+<!-- <div class="container">
+    <div class="row">
+      <div class="serv-items" id="isotope-items">
+          		<div class="row">
+          			{% for client in clientvideolist %}
+					<div class="col-md-6">
+						<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 mission-video">
+        					<iframe width="457" height="314" src="{{client.link.url}}}" allowfullscreen></iframe>
+      					</div>
+            		
+              		</div>
+              		{% endfor %}
+            	</div>
+          </div>
+        </div>
+        </div> -->
+
+<div class="page-title page-title-gallery1 bg-pattern" data-bgcolor="056CA1">
+  <div class="page-title-overlay">
+    <div class="container">
+      <h1>VIDEOS</h1>
+    </div>
+  </div>
+</div>
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-home"><a href="{% url 'clinic1app:clienthome' %}"><i class="fa fa-home"></i></a></li>
+       
+        <li class="active">Videos</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<div class="gallery gallery-1">
+  <div class="container">
+    <div class="row">
+      <div class="gallery-text"> Our Dental Clinic is dedicated to providing the most up to date general, orthodontic and family dentistry. Our Clinic has grown to provide a world class facility for the treatment of tooth loss, dental cosmetics and advanced restorative dentistry. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+
+     <div class="gallery-1-items" id="isotope-items">
+     	{% for video in clientvideolist %}
+        <div class="gallery-1-item isotope-item col-lg-4 col-md-4 col-sm-4 col-xs-12 success">
+          <div class="gallery-1-item-image" > <iframe src="{{ video.video_link }}"></iframe> 
+            </div>
+          <div class="gallery-1-item-info">
+            <h4 class="gallery-1-item-title">{{video.title}}</h4>
+          </div>
+        </div>
+        {% endfor %}
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+{% endblock %}

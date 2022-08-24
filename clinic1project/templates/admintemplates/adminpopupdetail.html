@@ -1,0 +1,44 @@
+{% extends 'admintemplates/base.html' %}
+{% load static %}
+
+{% block popuplist %}active{% endblock %}
+
+{% block popuplistid %}active{% endblock %}
+
+
+{% block title %}popup{% endblock %}
+
+<!-- {% block pagebrand %}{% endblock %} -->
+
+{% block content %}
+
+
+{% if messages%}
+<div class="success-message">
+<div class = "alert alert-success">
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+</div>
+</div>
+{% endif %}
+<div>
+
+
+</div>
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-md-4">
+    <div class="doctor-info">
+          <div class="doctor-info-name"><h2>Popup title: {{adminpopuplist.title}}</h2></div>
+          <br><div class="doctor-info-image"> <img src="{{adminpopuplist.image.url}}" alt="" style="width: 600px;height: auto; object-fit: cover;" /> </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <br>
+  <br>
+  <a href="{% url 'clinic1app:adminpopupupdate' adminpopuplist.id %}" ><button class="style:width:10px;">update</button></a>
+
+
+{% endblock %}
